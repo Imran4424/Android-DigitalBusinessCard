@@ -9,14 +9,23 @@ import androidx.navigation.compose.rememberNavController
 import com.luminous.digitalbusinesscard.Navigation.AppNavGraph
 import com.luminous.digitalbusinesscard.ui.theme.AppTheme
 
+// Top-level composable for the whole app.
 @Composable
 fun AppRoot() {
-        var navController = rememberNavController()
+        // Creates a NavController and "remembers" it across recompositions.
+        // If you DIDN'T use rememberNavController(), navigation would reset whenever AppRoot recomposes.
+        val navController = rememberNavController()
 
+        // App-level UI state: whether dark theme is enabled.
+        // - remember { ... } keeps the state across recompositions.
+        // - mutableStateOf(false) starts as false (light mode).
+        // - "by" + getValue/setValue lets you read/write like a normal variable:
         var isDark by remember {
                 mutableStateOf(false)
         }
 
+        // Applies your theme to everything inside this block.
+        // When isDark changes, AppTheme recomposes and switches color scheme accordingly.
         AppTheme(darkTheme = isDark) {
                 AppNavGraph(
                         navController = navController,
