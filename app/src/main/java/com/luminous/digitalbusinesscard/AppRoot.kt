@@ -30,7 +30,10 @@ fun AppRoot() {
                 // Builds the navigation graph (NavHost) using the same navController.
                 AppNavGraph(
                         navController = navController,
+                        // - isDark: current theme value (screens can display it e.g. switch position)
                         isDark = isDark,
+                        //   When a screen calls onDarkChange(true), it sets isDark = true,
+                        //   which triggers recomposition and updates the theme instantly.
                         onDarkChange = { isDark = it }
                 )
         }
