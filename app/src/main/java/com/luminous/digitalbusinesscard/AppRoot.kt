@@ -27,6 +27,7 @@ fun AppRoot() {
         // Applies your theme to everything inside this block.
         // When isDark changes, AppTheme recomposes and switches color scheme accordingly.
         AppTheme(darkTheme = isDark) {
+                // Builds the navigation graph (NavHost) using the same navController.
                 AppNavGraph(
                         navController = navController,
                         isDark = isDark,
