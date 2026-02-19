@@ -1,14 +1,34 @@
 package com.luminous.digitalbusinesscard.ui.theme
 
+// Imports Activity class (not used in this snippet as-is).
+// Often used when you want to access the window (status bar, navigation bar) or set system bar colors.
 import android.app.Activity
+// Imports Android version info (SDK_INT, etc.).
+// Typically used to check API level (e.g., Android 12+) before using features.
+// Note: in your current code you don't directly use Build, but it's commonly used with dynamic color checks.
 import android.os.Build
+
+// Imports a helper function that returns true if the device is currently in dark mode.
 import androidx.compose.foundation.isSystemInDarkTheme
+// Imports MaterialTheme, the main theming wrapper for Material 3 Compose.
 import androidx.compose.material3.MaterialTheme
+// Imports function to create a ColorScheme for dark theme using Material 3.
 import androidx.compose.material3.darkColorScheme
+
+// Imports dynamic dark color scheme (Material You).
+// On Android 12+ it can pull colors from the user’s wallpaper/system theme.
 import androidx.compose.material3.dynamicDarkColorScheme
+
+// Imports dynamic light color scheme (Material You).
+// On Android 12+ it can pull colors from the user’s wallpaper/system theme.
 import androidx.compose.material3.dynamicLightColorScheme
+
+// Imports function to create a ColorScheme for light theme.
 import androidx.compose.material3.lightColorScheme
+// Imports @Composable annotation needed for composable functions.
 import androidx.compose.runtime.Composable
+// Imports LocalContext, which provides the current Android Context inside Compose.
+// Needed for dynamic color functions because they require a context.
 import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
