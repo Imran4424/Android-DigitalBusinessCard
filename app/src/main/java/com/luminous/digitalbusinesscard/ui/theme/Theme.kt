@@ -61,7 +61,11 @@ private val LightColorScheme = lightColorScheme(
 // We can call this at the top of your app and wrap all screens inside it.
 @Composable
 fun AppTheme(
+        // Parameter: whether the app should use dark colors.
+        // Default: follows the system setting automatically.
         darkTheme: Boolean = isSystemInDarkTheme(),
+        // Parameter: whether to use Material You dynamic colors.
+        // Default: true, meaning it tries to use dynamic colors first.
         // Dynamic color is available on Android 12+
         dynamicColor: Boolean = true,
         content: @Composable () -> Unit
