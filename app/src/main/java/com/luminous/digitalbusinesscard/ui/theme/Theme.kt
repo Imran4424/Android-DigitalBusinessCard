@@ -77,15 +77,17 @@ fun AppTheme(
                 dynamicColor -> {
                         // Get the current Context (needed by dynamic color APIs).
                         val context = LocalContext.current
-                        if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(
-                                context
-                        )
-                }
 
+                        if (darkTheme) dynamicDarkColorScheme(context)
+                        else dynamicLightColorScheme(context)
+                }
+                // If dynamicColor is false, and darkTheme is true -> use your custom dark scheme.
                 darkTheme -> DarkColorScheme
                 else -> LightColorScheme
+                // Otherwise -> use your custom light scheme.
         }
 
+        // Applies Material 3 theming to everything inside.
         MaterialTheme(
                 colorScheme = colorScheme,
                 typography = Typography,
