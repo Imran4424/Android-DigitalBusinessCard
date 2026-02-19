@@ -31,10 +31,13 @@ import androidx.compose.runtime.Composable
 // Needed for dynamic color functions because they require a context.
 import androidx.compose.ui.platform.LocalContext
 
+// Creates a ColorScheme object for your dark theme.
+// "private" means only this file can access it.
+// "val" means it can't be reassigned.
 private val DarkColorScheme = darkColorScheme(
-        primary = Purple80,
-        secondary = PurpleGrey80,
-        tertiary = Pink80
+        primary = Purple80, // Primary color used heavily across the app (buttons, highlights, etc.) in dark theme.
+        secondary = PurpleGrey80, // Secondary color used for accents and some UI elements.
+        tertiary = Pink80 // Tertiary color used for smaller accents or special UI components.
 )
 
 private val LightColorScheme = lightColorScheme(
