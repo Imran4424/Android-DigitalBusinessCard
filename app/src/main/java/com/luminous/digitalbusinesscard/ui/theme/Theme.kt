@@ -1,11 +1,11 @@
 package com.luminous.digitalbusinesscard.ui.theme
 
 // Imports Activity class (not used in this snippet as-is).
-// Often used when you want to access the window (status bar, navigation bar) or set system bar colors.
+// Often used when we want to access the window (status bar, navigation bar) or set system bar colors.
 import android.app.Activity
 // Imports Android version info (SDK_INT, etc.).
 // Typically used to check API level (e.g., Android 12+) before using features.
-// Note: in your current code you don't directly use Build, but it's commonly used with dynamic color checks.
+// Note: in current code we don't directly use Build, but it's commonly used with dynamic color checks.
 import android.os.Build
 
 // Imports a helper function that returns true if the device is currently in dark mode.
@@ -31,7 +31,7 @@ import androidx.compose.runtime.Composable
 // Needed for dynamic color functions because they require a context.
 import androidx.compose.ui.platform.LocalContext
 
-// Creates a ColorScheme object for your dark theme.
+// Creates a ColorScheme object for dark theme.
 // "private" means only this file can access it.
 // "val" means it can't be reassigned.
 private val DarkColorScheme = darkColorScheme(
@@ -40,10 +40,11 @@ private val DarkColorScheme = darkColorScheme(
         tertiary = Pink80 // Tertiary color used for smaller accents or special UI components.
 )
 
+// Creates a ColorScheme object for light theme.
 private val LightColorScheme = lightColorScheme(
-        primary = Purple40,
-        secondary = PurpleGrey40,
-        tertiary = Pink40
+        primary = Purple40, // Primary color for light theme.
+        secondary = PurpleGrey40, // Secondary color for light theme.
+        tertiary = Pink40 // Tertiary color for light theme.
 
         /* Other default colors to override
     background = Color(0xFFFFFBFE),
@@ -56,6 +57,8 @@ private val LightColorScheme = lightColorScheme(
     */
 )
 
+// Defines a composable function that applies your app theme to its children.
+// We can call this at the top of your app and wrap all screens inside it.
 @Composable
 fun AppTheme(
         darkTheme: Boolean = isSystemInDarkTheme(),
