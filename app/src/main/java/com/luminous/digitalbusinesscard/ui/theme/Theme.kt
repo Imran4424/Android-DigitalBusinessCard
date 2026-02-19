@@ -68,10 +68,14 @@ fun AppTheme(
         // Default: true, meaning it tries to use dynamic colors first.
         // Dynamic color is available on Android 12+
         dynamicColor: Boolean = true,
+        // Trailing Closure: the UI content that will be themed.
         content: @Composable () -> Unit
 ) {
+        // Chooses which color scheme the app should use.
         val colorScheme = when {
+                // If dynamicColor is enabled, try to use dynamic color schemes.
                 dynamicColor -> {
+                        // Get the current Context (needed by dynamic color APIs).
                         val context = LocalContext.current
                         if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(
                                 context
