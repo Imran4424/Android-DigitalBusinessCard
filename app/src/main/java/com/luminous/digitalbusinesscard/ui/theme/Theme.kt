@@ -27,6 +27,7 @@ import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 // Imports @Composable annotation needed for composable functions.
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 // Imports LocalContext, which provides the current Android Context inside Compose.
 // Needed for dynamic color functions because they require a context.
 import androidx.compose.ui.platform.LocalContext
@@ -87,10 +88,21 @@ fun AppTheme(
                 // Otherwise -> use your custom light scheme.
         }
 
-        // Applies Material 3 theming to everything inside.
-        MaterialTheme(
-                colorScheme = colorScheme,
-                typography = Typography,
-                content = content
-        )
+
+        // Provides a Spacing() object to the whole UI tree under this block.
+        // Any child composable can do:
+        //   val s = LocalSpacing.current
+        // and use s.md, s.lg, etc. for consistent padding.
+        //
+        // "provides" means: LocalSpacing will return this Spacing() instance.
+        CompositionLocalProvider(
+                LocalSpacing provides Spacing()
+        ) {
+                // Applies Material 3 theming to everything inside.
+                MaterialTheme(
+                        colorScheme = colorScheme,
+                        typography = Typography,
+                        content = content
+                )
+        }
 }
