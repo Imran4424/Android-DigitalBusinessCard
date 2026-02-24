@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -28,8 +29,8 @@ fun StatChip(
                         modifier = Modifier.padding(horizontal = spacing.medium, vertical = spacing.small),
                         horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                               
-
+                        Text(text = value, style = MaterialTheme.typography.titleMedium)
+                        Text(text = label, style = MaterialTheme.typography.bodySmall)
                 }
         }
 }
