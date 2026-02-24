@@ -43,7 +43,11 @@ fun ProfileScreen(
                                 .fillMaxSize(),
                         verticalArrangement = Arrangement.spacedBy(localSpacing.medium)
                 ) {
-
+                        ProfileHeader(
+                                name = "Shah Md. Imran Hossain",
+                                bio = "Senior Software Engineer",
+                                modifier = Modifier.fillMaxSize()
+                        )
                 }
         }
 }
