@@ -8,9 +8,11 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -59,6 +61,17 @@ fun ProfileScreen(
                                 StatChip("Posts", "128", Modifier.weight(1f))
                                 StatChip("Followers", "2.4K", Modifier.weight(1f))
                                 StatChip("Following", "310", Modifier.weight(1f))
+                        }
+
+                        Card(Modifier.fillMaxSize()) {
+                                // HStack
+                                Column(Modifier.padding(localSpacing.medium), verticalArrangement = Arrangement.spacedBy(localSpacing.small)) {
+                                        Text("About", style = MaterialTheme.typography.titleSmall)
+                                        Text(
+                                                "This is a static profile section. In later phases you can connect it to ViewModel/data layer.",
+                                                style = MaterialTheme.typography.bodyMedium
+                                        )
+                                }
                         }
                 }
         }
