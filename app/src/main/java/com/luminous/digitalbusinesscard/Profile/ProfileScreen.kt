@@ -2,7 +2,9 @@ package com.luminous.digitalbusinesscard.Profile
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Settings
@@ -48,6 +50,16 @@ fun ProfileScreen(
                                 bio = "Senior Software Engineer",
                                 modifier = Modifier.fillMaxSize()
                         )
+
+                        // VStack
+                        Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.spacedBy(localSpacing.medium)
+                        ) {
+                                StatChip("Posts", "128", Modifier.weight(1f))
+                                StatChip("Followers", "2.4K", Modifier.weight(1f))
+                                StatChip("Following", "310", Modifier.weight(1f))
+                        }
                 }
         }
 }
